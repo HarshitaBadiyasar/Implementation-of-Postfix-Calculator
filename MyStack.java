@@ -7,26 +7,26 @@ public class MyStack implements StackInterface
 	public Object[] arr;				// used during doubling the array size for stack
 	public void push(Object o)
 	{
-	if(o!=null){				// if null object is not pushed
-		if(i==s)				// if array is full
-		{
-			arr=new Object[2*s];
-			for(int q=0;q<s;q++)
-				arr[q]=array[q];
-			//Object[] array=new Object[2*s];
-			//for(int q=0;q<s;q++)
-				//array[q]=arr[q];
-			s=2*s;
-			array=arr;
-			array[i]=o;
-			i++;
+		if(o!=null){				// if null object is not pushed
+			if(i==s)				// if array is full
+			{
+				arr=new Object[2*s];
+				for(int q=0;q<s;q++)
+					arr[q]=array[q];
+				//Object[] array=new Object[2*s];
+				//for(int q=0;q<s;q++)
+					//array[q]=arr[q];
+				s=2*s;
+				array=arr;
+				array[i]=o;
+				i++;
+			}
+			else
+			{
+				array[i]=o;
+				i++;
+			}
 		}
-		else
-		{
-			array[i]=o;
-			i++;
-		}
-	}
 	}
 	public Object pop() throws EmptyStackException
 	{
